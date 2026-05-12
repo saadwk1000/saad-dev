@@ -1,0 +1,34 @@
+@import "../../styles/variables";
+
+.section {
+  padding: 100px 10%;
+  background: $primary-black;
+
+  .title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: $text-white;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .gold {
+    color: $accent-gold;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 5%;
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

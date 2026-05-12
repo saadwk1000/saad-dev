@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+
+.section {
+  padding: 100px 10%;
+  background: $primary-black;
+
+  .title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: $text-white;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .gold {
+    color: $accent-gold;
+  }
+
+  .timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+
+    // Aesthetic vertical line
+    &::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        $accent-gold,
+        transparent
+      );
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 5%;
+    .timeline {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

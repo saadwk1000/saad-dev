@@ -1,0 +1,259 @@
+@import "../../styles/variables";
+
+.hero {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  /* Updated for better spacing */
+  justify-content: space-between;
+  gap: 50px;
+  padding: 0 5%;
+  background: $primary-black;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+      circle,
+      rgba(212, 175, 55, 0.1) 0%,
+      transparent 70%
+    );
+    top: 20%;
+    left: 5%;
+    filter: blur(50px);
+    pointer-events: none;
+  }
+
+  .left {
+    /* Adjusted flex-basis to prevent crowding */
+    flex: 0 1 45%;
+    z-index: 10;
+
+    .name {
+      font-size: clamp(3rem, 7vw, 5rem);
+      color: $text-white;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .gold {
+      color: $accent-gold;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: $accent-gold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .description {
+      color: $text-gray;
+      font-size: 1.1rem;
+      max-width: 500px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 14px 40px;
+      background: transparent;
+      border: 1px solid $accent-gold;
+      color: $accent-gold;
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: $transition;
+
+      &:hover {
+        background: $accent-gold;
+        color: $primary-black;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+      }
+    }
+  }
+
+  .right {
+    /* Set to 50% to ensure a balanced split */
+    flex: 0 1 50%;
+    display: flex;
+    justify-content: flex-end; /* Keeps the animation pushed to the right edge */
+    align-items: center;
+    height: 100%;
+    position: relative;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* THE CODING ANIMATION (Standing Out)                                       */
+/* -------------------------------------------------------------------------- */
+
+.animationCanvas {
+  position: relative;
+  width: 450px; // Slightly larger for better impact
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .coreModule {
+    position: relative;
+    color: $accent-gold;
+    font-size: 6rem;
+    font-family: monospace;
+    animation: corePulse 4s infinite ease-in-out;
+    display: flex;
+    gap: 20px;
+    opacity: 0.6;
+    z-index: 5;
+
+    &::after {
+      content: "BUILD";
+      position: absolute;
+      font-size: 0.8rem;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $text-gray;
+      letter-spacing: 4px;
+    }
+  }
+
+  .stream {
+    position: absolute;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      $accent-gold 50%,
+      transparent 100%
+    );
+    border-radius: 4px;
+    opacity: 0;
+  }
+
+  .stream1 {
+    width: 2px;
+    height: 150px;
+    left: 20%;
+    top: -10%;
+    animation: streamFlow 5s infinite linear;
+  }
+
+  .stream2 {
+    width: 3px;
+    height: 100px;
+    right: 30%;
+    top: 10%;
+    animation: streamFlow 4s infinite linear 1s;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      $text-white 50%,
+      transparent 100%
+    );
+  }
+
+  .stream3 {
+    width: 2px;
+    height: 180px;
+    left: 50%;
+    bottom: -15%;
+    animation: streamFlow 6s infinite linear 2s;
+  }
+
+  .orbit {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border: 1px solid rgba(212, 175, 55, 0.05);
+    border-radius: 50%;
+    border-top-color: rgba(212, 175, 55, 0.4);
+    animation: rotate 15s infinite linear;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* KEYFRAMES                                                                  */
+/* -------------------------------------------------------------------------- */
+
+@keyframes corePulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes streamFlow {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVENESS                                                             */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center; /* Center everything on mobile */
+    gap: 20px;
+    padding: 120px 5% 60px;
+
+    .left {
+      flex: 0 0 100%;
+      margin-bottom: 3rem;
+      .description {
+        margin: 0 auto 3rem;
+      }
+    }
+
+    .right {
+      flex: 0 0 100%;
+      justify-content: center;
+      width: 100%;
+      .animationCanvas {
+        width: 300px;
+        height: 300px;
+        transform: scale(0.8);
+      }
+    }
+  }
+}

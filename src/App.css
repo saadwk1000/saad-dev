@@ -1,0 +1,109 @@
+/* -------------------------------------------------------------------------- */
+/* GLOBAL RESET & THEME BASICS                                                */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  --primary-black: #0a0a0a;
+  --secondary-black: #141414;
+  --accent-gold: #d4af37;
+  --text-white: #f5f5f5;
+  --text-gray: #a0a0a0;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent horizontal scroll issues on mobile */
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--primary-black);
+  color: var(--text-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------------------------------------------------- */
+/* TYPOGRAPHY & LINKS                                                         */
+/* -------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* -------------------------------------------------------------------------- */
+/* CUSTOM SCROLLBAR (Premium Gold Aesthetic)                                 */
+/* -------------------------------------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* -------------------------------------------------------------------------- */
+/* UTILITY CLASSES                                                            */
+/* -------------------------------------------------------------------------- */
+
+.gold-text {
+  color: var(--accent-gold);
+}
+
+.glass-effect {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* -------------------------------------------------------------------------- */
+/* MOBILE RESPONSIVENESS (Core Scaling)                                      */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Slight scale down for mobile */
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../styles/variables";
+
+.card {
+  display: flex;
+  background: $secondary-black;
+  border-left: 3px solid $accent-gold;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  transition: $transition;
+
+  &:hover {
+    background: lighten($secondary-black, 2%);
+  }
+
+  .left {
+    flex: 0 0 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 60px;
+    }
+  }
+
+  .right {
+    flex: 0 0 75%;
+    padding-left: 1.5rem;
+    h3 {
+      color: $accent-gold;
+      text-align: start;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      text-align: left;
+      color: $text-gray;
+      line-height: 1.6;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+    .left {
+      justify-content: start;
+    }
+    .right {
+      padding: 1rem 0;
+      flex: 0 0 100%;
+    }
+  }
+}

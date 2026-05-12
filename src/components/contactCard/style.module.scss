@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+
+.card {
+  display: flex;
+  align-items: center;
+  background: $primary-black;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: $transition;
+
+  &:hover {
+    border-color: $accent-gold;
+    background: $glass-bg;
+    transform: translateY(-5px);
+  }
+
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .title {
+    color: $accent-gold;
+    font-weight: 500;
+  }
+}
