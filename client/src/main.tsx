@@ -8,7 +8,7 @@ import { store } from "./shared/redux";
 
 createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
-    <BrowserRouter basename="/saad-dev">
+    <BrowserRouter>
       <StrictMode>
         <App />
       </StrictMode>
