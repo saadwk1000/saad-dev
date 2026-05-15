@@ -22,7 +22,7 @@ const Admin: React.FC = () => {
         const token = localStorage.getItem("token");
 
         const response = await axios.get<MessageProps[]>(
-          "http://localhost:5000/api/messages",
+          "https://saad-dev-3i23.onrender.com/api/messages",
           {
             headers: { Authorization: `Bearer ${token}` },
           },

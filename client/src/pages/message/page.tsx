@@ -15,7 +15,7 @@ const Message: React.FC = () => {
     onSubmit: async (values, { resetForm }) => {
       try {
         const res = await axios.post(
-          "http://localhost:5000/api/messages",
+          "https://saad-dev-3i23.onrender.com/api/messages",
           values,
         );
 
