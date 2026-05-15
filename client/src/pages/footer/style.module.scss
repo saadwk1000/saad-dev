@@ -1,0 +1,68 @@
+@import "../../styles/variables";
+
+.footer {
+  background: $primary-black;
+  padding: 50px 10% 20px;
+  border-top: 1px solid $glass-border;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    .logo {
+      color: $text-white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      .gold {
+        color: $accent-gold;
+      }
+    }
+    .nav {
+      a {
+        color: $text-gray;
+        margin-left: 2rem;
+        text-decoration: none;
+        &:hover {
+          color: $accent-gold;
+        }
+      }
+    }
+  }
+
+  .divider {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 20px;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    color: $text-gray;
+    font-size: 0.8rem;
+    .socials span {
+      margin-left: 1.5rem;
+      cursor: pointer;
+      &:hover {
+        color: $accent-gold;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .footer .top {
+    flex-direction: column;
+    gap: 20px;
+    .nav {
+      margin: 0;
+      a {
+        margin: 0 10px;
+      }
+    }
+  }
+}

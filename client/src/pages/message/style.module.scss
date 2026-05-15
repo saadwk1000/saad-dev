@@ -1,0 +1,212 @@
+@import "../../styles/variables";
+
+.contactSection {
+  padding: 100px 10%;
+  background-color: $primary-black;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(
+      circle,
+      rgba(212, 175, 55, 0.03) 0%,
+      transparent 70%
+    );
+    bottom: -10%;
+    right: -5%;
+    pointer-events: none;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 900px;
+    z-index: 2;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  .title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+    color: $text-white;
+
+    .gold {
+      color: $accent-gold;
+    }
+  }
+
+  .subtitle {
+    color: $text-gray;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  .inputGroup {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+  }
+
+  .field {
+    position: relative;
+    flex: 1;
+
+    input,
+    textarea {
+      width: 100%;
+      background: $secondary-black;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 1.2rem;
+      color: $text-white;
+      font-size: 1rem;
+      font-family: inherit;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+
+      &::placeholder {
+        color: rgba(160, 160, 160, 0.5);
+      }
+
+      &:focus {
+        background: rgba(212, 175, 55, 0.02);
+        border-color: rgba(212, 175, 55, 0.3);
+        outline: none;
+      }
+    }
+
+    textarea {
+      resize: none;
+      display: block;
+    }
+
+    .focusBorder {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: $accent-gold;
+      transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    input:focus ~ .focusBorder,
+    textarea:focus ~ .focusBorder {
+      width: 100%;
+      left: 0;
+    }
+
+    .errorInput {
+      border-color: rgba(255, 77, 77, 0.4) !important;
+      background: rgba(255, 77, 77, 0.03) !important;
+
+      & ~ .focusBorder {
+        background-color: #ff4d4d;
+      }
+    }
+
+    .errorText {
+      color: #ff4d4d;
+      font-size: 0.75rem;
+      position: absolute;
+      bottom: -22px;
+      left: 4px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      animation: fadeIn 0.3s ease;
+    }
+  }
+}
+
+.submitBtn {
+  align-self: center;
+  padding: 1.1rem 4.5rem;
+  background: transparent;
+  color: $accent-gold;
+  border: 1px solid $accent-gold;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 1.5rem;
+  border-radius: 2px;
+
+  &:hover:not(:disabled) {
+    background: $accent-gold;
+    color: $primary-black;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+    transform: translateY(-3px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: $text-gray;
+    color: $text-gray;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .contactSection {
+    padding: 80px 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin-bottom: 3rem;
+    .title {
+      font-size: 2.2rem;
+    }
+  }
+
+  .form {
+    gap: 2rem;
+  }
+}

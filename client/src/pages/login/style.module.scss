@@ -1,0 +1,266 @@
+@import "../../styles/variables";
+
+/* =======================
+   BASE LAYOUT
+======================= */
+
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-black;
+  padding: 20px;
+}
+
+/* =======================
+   LOGIN CARD
+======================= */
+
+.loginCard {
+  width: 100%;
+  max-width: 500px;
+  background: $glass-bg;
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* =======================
+   HEADER
+======================= */
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  h1 {
+    font-size: 2rem;
+    color: $text-white;
+    margin-bottom: 0.5rem;
+
+    .gold {
+      color: $accent-gold;
+    }
+  }
+
+  p {
+    color: $text-gray;
+    font-size: 0.9rem;
+  }
+}
+
+/* =======================
+   FORM
+======================= */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    color: $text-white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-align: left !important;
+  }
+}
+
+/* =======================
+   INPUT
+======================= */
+
+.inputWrapper {
+  position: relative;
+
+  input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1rem;
+    color: $text-white;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+      background: rgba(212, 175, 55, 0.05);
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+  }
+
+  .focusBorder {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: $accent-gold;
+    transition: 0.4s;
+  }
+
+  input:focus ~ .focusBorder {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* =======================
+   BUTTONS
+======================= */
+
+.toggleBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: $accent-gold;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.loginBtn {
+  margin-top: 1rem;
+  padding: 0.9rem;
+  background: $accent-gold;
+  color: $primary-black;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* =======================
+   ERROR / FOOTER
+======================= */
+
+.errorMessage {
+  color: #ff4d4d;
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: $text-gray;
+  font-size: 0.85rem;
+
+  .goldLink {
+    color: $accent-gold;
+    cursor: pointer;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.errorInput {
+  border-color: #ff4d4d !important;
+}
+
+/* =======================
+   📱 MOBILE (<= 480px)
+======================= */
+
+@media (max-width: 480px) {
+  .loginPage {
+    padding: 12px;
+  }
+
+  .loginCard {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
+
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  .form {
+    gap: 1rem;
+  }
+
+  .inputWrapper input {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .loginBtn {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    font-size: 0.75rem;
+  }
+}
+
+/* =======================
+   📲 TABLET (481px - 768px)
+======================= */
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .loginCard {
+    max-width: 420px;
+    padding: 2.2rem;
+  }
+
+  .header h1 {
+    font-size: 1.7rem;
+  }
+
+  .form {
+    gap: 1.2rem;
+  }
+}
+
+/* =======================
+   💻 SMALL LAPTOP (769px - 1024px)
+======================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .loginCard {
+    max-width: 460px;
+    padding: 2.6rem;
+  }
+}

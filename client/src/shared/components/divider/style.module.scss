@@ -1,0 +1,31 @@
+@import "../../../styles/variables";
+
+.dividerWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-black;
+  padding: 2rem 0; // Space between sections
+}
+
+.line {
+  width: 80%;
+  height: 1px;
+  /* Premium radial gradient that fades into the black background at the ends */
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.4) 0%,
+    rgba(212, 175, 55, 0.1) 50%,
+    transparent 100%
+  );
+
+  // Subtle glow effect
+  box-shadow: 0px 0px 15px rgba(212, 175, 55, 0.05);
+}
+
+@media (max-width: 768px) {
+  .line {
+    width: 90%;
+  }
+}

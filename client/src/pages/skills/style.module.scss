@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.section {
+  padding: 100px 10%;
+  background: $primary-black;
+  text-align: center;
+
+  .title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: $text-white;
+    margin-bottom: 4rem;
+  }
+  .gold {
+    color: $accent-gold;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+}
