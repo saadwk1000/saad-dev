@@ -14,7 +14,7 @@ const Introduction: React.FC = () => {
           modern architectures and seamless user experiences.
         </p>
         <a
-          href="/saad-dev/Saad-R-2026-ATSF.pdf"
+          href="/Saad-R-2026-ATSF.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.cta}
