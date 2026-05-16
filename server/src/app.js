@@ -7,7 +7,7 @@ const authRoutes = require("./routes/authRoutes");
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // your frontend
+    origin: "https://saad-dev-five.vercel.app",
     credentials: true,
   }),
 );
