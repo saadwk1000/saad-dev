@@ -3,7 +3,14 @@ const Message = require("../models/messageModel");
 // CREATE MESSAGE
 const createMessage = async (req, res) => {
   try {
-    const { name, email, message } = req.body;
+    const { name, email, message } = req.body || {};
+
+    if (!name || !email || !message) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
+    }
 
     const newMessage = await Message.create({
       name,
@@ -16,6 +23,7 @@ const createMessage = async (req, res) => {
       data: newMessage,
     });
   } catch (error) {
+    console.log("CREATE MESSAGE ERROR:", error);
     res.status(500).json({
       success: false,
       message: error.message,
