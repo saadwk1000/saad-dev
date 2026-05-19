@@ -20,7 +20,7 @@ const About = () => (
       <div className={styles.right}>
         <div className={styles.illustration}>
           {/* Placeholder for animated coding icon */}
-          <img src={Images.Profile} alt="saad" className={styles.codeIcon} />
+          <img src={Images.Saad} alt="saad" className={styles.codeIcon} />
         </div>
       </div>
     </div>
