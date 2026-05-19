@@ -8,61 +8,99 @@
   .top {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    .logo {
-      color: $text-white;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: bold;
-      .gold {
-        color: $accent-gold;
-      }
-    }
-    .nav {
-      a {
-        color: $text-gray;
-        margin-left: 2rem;
-        text-decoration: none;
-        &:hover {
-          color: $accent-gold;
-        }
-      }
-    }
+    align-items: flex-start;
+    gap: 20px;
   }
 
-  .divider {
-    border: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-bottom: 20px;
+  .logo {
+    color: $text-white;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+
+    .gold {
+      color: $accent-gold;
+    }
   }
 
   .bottom {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
     color: $text-gray;
     font-size: 0.8rem;
-    .socials span {
-      margin-left: 1.5rem;
-      cursor: pointer;
-      &:hover {
-        color: $accent-gold;
+
+    p {
+      margin: 0;
+      text-align: right;
+    }
+  }
+}
+
+.cardSide {
+  .grid {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 40px 6% 20px;
+
+    .top {
+      align-items: center;
+    }
+
+    .bottom {
+      align-items: flex-end;
+
+      p {
+        text-align: right;
       }
+    }
+  }
+
+  .cardSide {
+    .grid {
+      gap: 12px;
     }
   }
 }
 
 @media (max-width: 600px) {
-  .footer .top {
-    flex-direction: column;
-    gap: 20px;
-    .nav {
-      margin: 0;
-      a {
-        margin: 0 10px;
+  .footer {
+    padding: 35px 20px 20px;
+
+    .top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 25px;
+    }
+
+    .bottom {
+      align-items: center;
+      width: 100%;
+
+      p {
+        text-align: center;
       }
+    }
+  }
+
+  .cardSide {
+    width: 100%;
+
+    .grid {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
     }
   }
 }

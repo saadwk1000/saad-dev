@@ -38,7 +38,7 @@ const Message: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>
-            Drop a <span className={styles.gold}>Message</span>
+            Let's <span className={styles.gold}>Connect</span>
           </h2>
           <p className={styles.subtitle}>
             Let's collaborate on your next big idea.

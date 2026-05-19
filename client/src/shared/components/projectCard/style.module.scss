@@ -15,8 +15,13 @@
   &:hover {
     border-color: $accent-gold;
     transform: scale(1.02);
+
     .overlay {
       opacity: 0.8;
+    }
+
+    .button {
+      color: $accent-gold;
     }
   }
 
@@ -34,18 +39,27 @@
   .content {
     position: relative;
     z-index: 2;
+
     .title {
       color: $accent-gold;
       margin-bottom: 10px;
       font-size: 1.5rem;
     }
+
     .description {
       color: $text-gray;
       font-size: 0.9rem;
       line-height: 1.4;
       margin-bottom: 15px;
     }
+
     .button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      justify-content: center;
+
       font-size: 0.8rem;
       font-weight: bold;
       color: $text-white;
@@ -53,6 +67,14 @@
       border: none;
       text-transform: uppercase;
       letter-spacing: 1px;
+      cursor: pointer;
+      transition: $transition;
+
+      .githubIcon {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+      }
     }
   }
 }

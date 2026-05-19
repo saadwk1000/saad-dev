@@ -7,10 +7,9 @@ import Skills from "../skills/page";
 import Services from "../services/page";
 import Projects from "../projects/page";
 import WorkExperience from "../experience/page";
-import Contact from "../contact/page";
-import Footer from "../footer/page";
 import Divider from "../../shared/components/divider";
 import Message from "../message/page";
+import Footer from "../footer/page";
 
 const Portfolio: React.FC = () => {
   return (
@@ -28,7 +27,6 @@ const Portfolio: React.FC = () => {
         <Divider />
         <WorkExperience />
         <Divider />
-        <Contact />
         <Message />
         <Footer />
       </div>

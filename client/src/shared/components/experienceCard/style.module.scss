@@ -9,12 +9,19 @@
   border-radius: 8px;
   margin-bottom: 2rem;
   border-left: 2px solid $accent-gold;
-  transition: $transition;
+  transition:
+    transform 0.7s ease,
+    opacity 0.7s ease,
+    background 0.3s ease;
+
   text-align: center;
+
+  /* Initial hidden state */
+  opacity: 0;
+  transform: translateX(120px);
 
   &:hover {
     background: rgba(212, 175, 55, 0.05);
-    transform: translateX(5px);
   }
 
   .left {
@@ -63,6 +70,12 @@
       font-style: italic;
     }
   }
+}
+
+/* Active animation */
+.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media (min-width: 768px) {

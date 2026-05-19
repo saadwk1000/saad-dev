@@ -8,6 +8,8 @@ import WhatsApp from "./social-whatsapp.svg";
 import Gmail from "./social-gmail.svg";
 import LinkedIn from "./social-linkedin.svg";
 import Phone from "./social-call.svg";
+import Call from "./social-phone.svg";
+import GitHub from "./social-github.svg";
 
 const Icons = {
   Angular,
@@ -20,5 +22,7 @@ const Icons = {
   Gmail,
   LinkedIn,
   Phone,
+  Call,
+  GitHub,
 };
 export default Icons;

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./style.module.scss";
+import Icons from "../../assets/icons";
 
 interface ProjectProps {
   title: string;
@@ -21,7 +22,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
       <p className={styles.description}>{description}</p>
 
       <button onClick={onClick} className={styles.button}>
-        View Details
+        <img src={Icons.GitHub} alt="github" className={styles.githubIcon} />
       </button>
     </div>
   </div>

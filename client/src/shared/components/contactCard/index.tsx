@@ -3,16 +3,14 @@ import styles from "./style.module.scss";
 
 interface ContactProps {
   icon: string;
-  title: string;
   link: string;
 }
 
-const ContactCard: React.FC<ContactProps> = ({ icon, title, link }) => (
+const ContactCard: React.FC<ContactProps> = ({ icon, link }) => (
   <a href={link} className={styles.card} target="_blank" rel="noreferrer">
     <div className={styles.iconWrapper}>
-      <img src={icon} alt={title} />
+      <img src={icon} alt={"icon"} />
     </div>
-    <span className={styles.title}>{title}</span>
   </a>
 );
 
